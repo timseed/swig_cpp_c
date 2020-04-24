@@ -22,3 +22,15 @@ class Swigtest(TestCase):
         self.assertRaises(TypeError, s.Sum, **{"a": 5.9, "b": 5.9})
         self.assertRaises(TypeError, s.Sum, **{"a": 5, "b": 5.9})
         self.assertRaises(TypeError, s.Sum, **{"a": 5.9, "b": 5})
+
+
+    def test_Sum_from_c_Method(self):
+        s = ex6.SS()
+        self.assertEqual(s.Sum_from_c(1, 2), 3)
+        self.assertEqual(s.Sum_from_c(5, 5), 10)
+        # These should not work
+        # C++ Expects an int - not float
+        self.assertRaises(TypeError, s.Sum_from_c, **{"a": 5.9, "b": 5.9})
+        self.assertRaises(TypeError, s.Sum_from_c, **{"a": 5, "b": 5.9})
+        self.assertRaises(TypeError, s.Sum_from_c, **{"a": 5.9, "b": 5})
+

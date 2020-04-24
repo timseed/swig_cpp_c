@@ -5,7 +5,7 @@ setup.py file for SWIG example
 from distutils.core import setup, Extension
 
 
-example_module = Extension("_ex6", sources=["ex6_wrap.cpp", "SS.cpp"],)
+example_module = Extension("_ex6", sources=["ex6_wrap.cpp", "SS.cpp","c_code.c"],)
 
 setup(
     name="ex6",

@@ -8,5 +8,6 @@ class SS{
 public:
     SS();
     int Sum(int a, int b);
+    int Sum_from_c(int a, int b);
 };
 #endif //EX5_SS_H
